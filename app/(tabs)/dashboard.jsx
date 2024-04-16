@@ -42,7 +42,7 @@ const Dashboard = () => {
           <Image
             source={profile}
             resizeMode="contain"
-            className="w-[51px] h-[50px] ml-2"
+            className="w-[40px] h-[40px] ml-2"
             alt='profile icon'
           />
         </View>
@@ -50,7 +50,7 @@ const Dashboard = () => {
         {/* company icon */}
         <View className='relative w-full inline-flex items-center justify-center'>
           <View className='absolute -top-3 right-[115px] '>
-            <Text className='text-primary bg-[#5E5E5EB5] flex items-center justify-center text-center border-2 border-black p-2 w-9 h-9 rounded-full'>
+            <Text className='text-primary bg-[#5E5E5EB5] flex items-center justify-center text-center border-2 border-black p-2 w-[35px] h-[35px] rounded-full'>
               4
             </Text>
           </View>
