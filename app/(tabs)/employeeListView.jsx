@@ -68,17 +68,17 @@ const EmployeeListView = () => {
       className='bg-black-300 h-full p-5 flex items-center justify-center '>
 
       {/* profile icon */}
-      <View className='flex w-full items-end mt-4'>
+      {/* <View className='flex w-full items-end mt-4'>
         <Image
           source={profile}
           resizeMode="contain"
           className="w-[40px] h-[40px]"
           alt='profile icon'
         />
-      </View>
+      </View> */}
 
       {/* company icon */}
-      <View className='relative '>
+      {/* <View className='relative '>
         <View className='absolute -right-5 -top-5 '>
           <Text className='text-primary bg-[#5E5E5EB5] flex items-center justify-center text-center border-2 border-black p-2 w-9 h-9 rounded-full'>
             4
@@ -91,9 +91,9 @@ const EmployeeListView = () => {
           className="w-[71px] h-[70px] ml-2"
           alt='search icon'
         />
-      </View>
+      </View> */}
 
-      <View className='p-2 my-4 flex flex-row items-center justify-between bg-[#0F2323] h-[55px] border-2 border-[#595959] rounded-xl'>
+      {/* <View className='p-2 my-4 flex flex-row items-center justify-between bg-[#0F2323] h-[55px] border-2 border-[#595959] rounded-xl'>
         <TextInput
           className='text-white p-2 text-[16px] w-[298px] h-full my-14 bg-[#0F2323]'
           placeholder="Search with name"
@@ -107,7 +107,7 @@ const EmployeeListView = () => {
           className="w-[30px] h-[30px] ml-2 text-white"
           alt='search icon'
         />
-      </View>
+      </View> */}
 
 
       <FlatList
