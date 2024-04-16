@@ -34,21 +34,20 @@ const Dashboard = () => {
     <ScrollView className="bg-black-300 h-full">
 
       <View
-        style={{ color: '#fff' }}
-        className='bg-black-30 h-full p-5'>
+        className='h-full p-5 flex items-center justify-center'>
 
         {/* profile icon */}
         <View className='flex w-full items-end mt-4'>
           <Image
             source={profile}
             resizeMode="contain"
-            className="w-[40px] h-[40px] ml-2"
+            className="w-[40px] h-[40px]"
             alt='profile icon'
           />
         </View>
 
         {/* company icon */}
-        <View className='relative w-full inline-flex items-center justify-center'>
+        {/* <View className='relative w-full inline-flex items-center justify-center'>
           <View className='absolute -top-3 right-[115px] '>
             <Text className='text-primary bg-[#5E5E5EB5] flex items-center justify-center text-center border-2 border-black p-2 w-[35px] h-[35px] rounded-full'>
               4
@@ -61,9 +60,22 @@ const Dashboard = () => {
             className="w-[71px] h-[70px] ml-2"
             alt='company logo'
           />
-        </View>
+        </View> */}
+        <View className='relative '>
+          <View className='absolute -right-5 -top-5 '>
+            <Text className='text-primary bg-[#5E5E5EB5] flex items-center justify-center text-center border-2 border-black p-2 w-9 h-9 rounded-full'>
+              4
+            </Text>
+          </View>
 
-        <View className='mt-4'>
+          <Image
+            source={logo}
+            resizeMode="contain"
+            className="w-[71px] h-[70px] ml-2"
+            alt='search icon'
+          />
+        </View>
+        <View className='mt-4 w-full'>
           <View className='bg-[#1A2C2C99] rounded-3xl font-bold'>
             <Text className='text-[18px] text-white  p-5'>
               Employee Productivity Dashboard

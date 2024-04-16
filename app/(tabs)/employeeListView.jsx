@@ -65,14 +65,14 @@ const EmployeeListView = () => {
 
     <View
       style={{ color: '#fff' }}
-      className='bg-black-300 h-full flex items-center justify-center '>
+      className='bg-black-300 h-full p-5 flex items-center justify-center '>
 
       {/* profile icon */}
       <View className='flex w-full items-end mt-4'>
         <Image
           source={profile}
           resizeMode="contain"
-          className="w-[51px] h-[50px] ml-2"
+          className="w-[40px] h-[40px]"
           alt='profile icon'
         />
       </View>
