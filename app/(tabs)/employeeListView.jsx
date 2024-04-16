@@ -95,11 +95,11 @@ const EmployeeListView = () => {
 
       <View className='p-2 my-4 flex flex-row items-center justify-between bg-[#0F2323] h-[55px] border-2 border-[#595959] rounded-xl'>
         <TextInput
-          style={{ color: '#fff' }}
-          className='text-[#ee0000b3] p-2 text-xl w-[298px] h-full my-14 bg-[#0F2323] placeholder-white'
+          className='text-white p-2 text-[16px] w-[298px] h-full my-14 bg-[#0F2323]'
           placeholder="Search with name"
           value={searchQuery}
           onChangeText={handleSearch}
+          placeholderTextColor="#fff"
         />
         <Image
           source={searchIcon}
