@@ -46,6 +46,7 @@ const EmployeeListView = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredEmployeeList, setFilteredEmployeeList] = useState(employeeListData);
 
+  // handle search query
   const handleSearch = (query) => {
     setSearchQuery(query);
     if (query.trim() === '') {
@@ -64,22 +65,33 @@ const EmployeeListView = () => {
 
     <View
       style={{ color: '#fff' }}
-      className='bg-black-300  h-full text-red-500 flex items-center justify-center bg-sky-60'>
+      className='bg-black-300 h-full flex items-center justify-center '>
 
+      {/* profile icon */}
       <View className='flex w-full items-end mt-4'>
         <Image
           source={profile}
           resizeMode="contain"
-          className="w-[51px] h-[50px] ml-2 text-white"
+          className="w-[51px] h-[50px] ml-2"
+          alt='profile icon'
+        />
+      </View>
+
+      {/* company icon */}
+      <View className='relative '>
+        <View className='absolute -right-5 -top-5 '>
+          <Text className='text-primary bg-[#5E5E5EB5] flex items-center justify-center text-center border-2 border-black p-2 w-9 h-9 rounded-full'>
+            4
+          </Text>
+        </View>
+
+        <Image
+          source={logo}
+          resizeMode="contain"
+          className="w-[71px] h-[70px] ml-2"
           alt='search icon'
         />
       </View>
-      <Image
-        source={logo}
-        resizeMode="contain"
-        className="w-[71px] h-[70px] ml-2 text-white"
-        alt='search icon'
-      />
 
       <View className='p-2 my-4 flex flex-row items-center justify-between bg-[#0F2323] h-[55px] border-2 border-[#595959] rounded-xl'>
         <TextInput
@@ -100,8 +112,6 @@ const EmployeeListView = () => {
 
       <FlatList
         data={filteredEmployeeList}
-        className=''
-        contentContainerStyle='flex items-center justify-center w-full'
         renderItem={({ item }) => <EmployeeItem employee={item} />}
         keyExtractor={(item) => item.empId.toString()}
       />
