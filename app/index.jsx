@@ -25,7 +25,7 @@ export default function App() {
 
     setSubmitting(true);
     setTimeout(() => {
-      router.replace('/employeeListView');
+      router.replace('/dashboard');
       setSubmitting(false);
     }, 300);
   }
