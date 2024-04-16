@@ -1,7 +1,10 @@
-import { FlatList, Text, View } from 'react-native'
-import React from 'react'
+import { FlatList, Text, View, TextInput, Image } from 'react-native'
+import React, { useState } from 'react'
 import { employeeListData } from '../../constants/employee';
 
+import searchIcon from '../../assets/icons/search.png'
+import logo from '../../assets/logo/logo2.png'
+import profile from '../../assets/icons/profile2.png'
 
 const EmployeeItem = ({ employee }) => (
   <View
@@ -40,17 +43,63 @@ const EmployeeItem = ({ employee }) => (
 
 const EmployeeListView = () => {
 
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredEmployeeList, setFilteredEmployeeList] = useState(employeeListData);
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+    if (query.trim() === '') {
+      setFilteredEmployeeList(employeeListData);
+    } else {
+      const filteredList = employeeListData.filter((employee) =>
+        employee.name.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredEmployeeList(filteredList);
+    }
+  };
+
 
 
   return (
 
     <View
       style={{ color: '#fff' }}
-      className='bg-black-300 h-full text-red-500 flex items-center justify-center bg-sky-60'>
-      <Text className='text-3xl  '>employeeListView</Text>
+      className='bg-black-300  h-full text-red-500 flex items-center justify-center bg-sky-60'>
+
+      <View className='flex w-full items-end mt-4'>
+        <Image
+          source={profile}
+          resizeMode="contain"
+          className="w-[51px] h-[50px] ml-2 text-white"
+          alt='search icon'
+        />
+      </View>
+      <Image
+        source={logo}
+        resizeMode="contain"
+        className="w-[71px] h-[70px] ml-2 text-white"
+        alt='search icon'
+      />
+
+      <View className='p-2 my-4 flex flex-row items-center justify-between bg-[#0F2323] h-[55px] border-2 border-[#595959] rounded-xl'>
+        <TextInput
+          style={{ color: '#fff' }}
+          className='text-[#ee0000b3] p-2 text-xl w-[298px] h-full my-14 bg-[#0F2323] placeholder-white'
+          placeholder="Search with name"
+          value={searchQuery}
+          onChangeText={handleSearch}
+        />
+        <Image
+          source={searchIcon}
+          resizeMode="contain"
+          className="w-[30px] h-[30px] ml-2 text-white"
+          alt='search icon'
+        />
+      </View>
+
 
       <FlatList
-        data={employeeListData}
+        data={filteredEmployeeList}
         className=''
         contentContainerStyle='flex items-center justify-center w-full'
         renderItem={({ item }) => <EmployeeItem employee={item} />}

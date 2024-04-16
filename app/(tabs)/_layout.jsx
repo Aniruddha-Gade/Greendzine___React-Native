@@ -5,7 +5,7 @@ import { Tabs } from 'expo-router'
 
 // logo
 import home from '.././../assets/logo/home.png'
-import profile from '.././../assets/logo/profile.png'
+import profile from '.././../assets/icons/profile.png'
 
 const TabIcon = ({ icon, color, name, focused }) => {
     return (
